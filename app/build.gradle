@@ -4,6 +4,7 @@ plugins {
 }
 
 apply from: "${rootDir}/config/ktlint/ktlint.gradle"
+apply from: "${rootDir}/config/detekt/detekt.gradle"
 
 android {
     compileSdk 30
@@ -33,6 +34,7 @@ android {
 }
 
 dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation libraries.kotlin
     implementation libraries.appCompat
     implementation libraries.coreKtx
