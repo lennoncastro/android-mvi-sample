@@ -1,0 +1,49 @@
+buildscript {
+    ext {
+        versions = [
+                'kotlin'          : '1.5.31',
+                'detekt'          : '1.9.0',
+                'gradlePlugin'    : '7.0.2',
+                'appCompat'       : '1.2.0',
+                'ktlint'          : '0.36.0',
+                'ktx'             : '1.3.2',
+                'material'        : '1.3.0',
+                'constraintlayout': '2.0.4',
+                'junit'           : '4.0.0',
+                'extJunit'        : '1.1.2',
+                'espressoCore'    : '3.3.0',
+        ]
+        libraries = [
+                'detekt'          : "io.gitlab.arturbosch.detekt:detekt-cli:${versions.detekt}",
+                'kotlin'          : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}",
+                'appCompat'       : "androidx.appcompat:appcompat:${versions.appCompat}",
+                'ktlint'          : "com.pinterest:ktlint:${versions.ktlint}",
+                'coreKtx'         : "androidx.core:core-ktx:${versions.ktx}",
+                'material'        : "com.google.android.material:material:${versions.material}",
+                'constraintlayout': "androidx.constraintlayout:constraintlayout:${versions.constraintlayout}"
+        ]
+        test = [
+                'junit': 'junit:junit:${version.junit}'
+        ]
+        androidTest = [
+                'extJunit'    : "androidx.test.ext:junit:${versions.extJunit}",
+                'espressoCore': "androidx.test.espresso:espresso-core:${versions.espressoCore}"
+        ]
+        classpath = [
+                'kotlin'      : "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}",
+                'gradlePlugin': "com.android.tools.build:gradle:${versions.gradlePlugin}"
+        ]
+    }
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath classpath.gradlePlugin
+        classpath classpath.kotlin
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
