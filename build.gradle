@@ -12,6 +12,7 @@ buildscript {
                 'junit'           : '4.9',
                 'extJunit'        : '1.1.2',
                 'espressoCore'    : '3.3.0',
+                'retrofit'        : '2.6.0'
         ]
         libraries = [
                 'detekt'          : "io.gitlab.arturbosch.detekt:detekt-cli:${versions.detekt}",
@@ -20,7 +21,9 @@ buildscript {
                 'ktlint'          : "com.pinterest:ktlint:${versions.ktlint}",
                 'coreKtx'         : "androidx.core:core-ktx:${versions.ktx}",
                 'material'        : "com.google.android.material:material:${versions.material}",
-                'constraintlayout': "androidx.constraintlayout:constraintlayout:${versions.constraintlayout}"
+                'constraintlayout': "androidx.constraintlayout:constraintlayout:${versions.constraintlayout}",
+                'retrofit'        : "com.squareup.retrofit2:retrofit:${versions.retrofit}",
+                'gson'            : "com.squareup.retrofit2:converter-gson:${versions.retrofit}"
         ]
         test = [
                 'junit': "junit:junit:${versions.junit}"
