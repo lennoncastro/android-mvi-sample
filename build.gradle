@@ -1,5 +1,13 @@
 buildscript {
     ext {
+        projectInfo = [
+                'applicationId': "com.lennon.mvisample",
+                'compileSdk'   : 30,
+                'minSdk'       : 21,
+                'targetSdk'    : 30,
+                'versionCode'  : 1,
+                'versionName'  : "1.0"
+        ]
         versions = [
                 'kotlin'          : '1.5.31',
                 'detekt'          : '1.9.0',

@@ -7,14 +7,14 @@ apply from: "${rootDir}/config/ktlint/ktlint.gradle"
 apply from: "${rootDir}/config/detekt/detekt.gradle"
 
 android {
-    compileSdk 30
+    compileSdk projectInfo.compileSdk
 
     defaultConfig {
-        applicationId "com.lennon.mvisample"
-        minSdk 21
-        targetSdk 30
-        versionCode 1
-        versionName "1.0"
+        applicationId projectInfo.applicationId
+        minSdk projectInfo.minSdk
+        targetSdk projectInfo.targetSdk
+        versionCode projectInfo.versionCode
+        versionName projectInfo.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -41,7 +41,11 @@ dependencies {
     implementation libraries.material
     implementation libraries.material
     implementation libraries.constraintlayout
+    api libraries.retrofit
+    api libraries.gson
+
     testImplementation test.junit
+
     androidTestImplementation androidTest.extJunit
     androidTestImplementation androidTest.espressoCore
 }
