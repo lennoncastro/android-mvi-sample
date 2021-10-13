@@ -42,11 +42,6 @@ dependencies {
     implementation libraries.material
     implementation libraries.constraintlayout
 
-    implementation project(':network')
-
-    api libraries.retrofit
-    api libraries.gson
-
     testImplementation test.junit
 
     androidTestImplementation androidTest.extJunit
