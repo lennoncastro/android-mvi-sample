@@ -1,21 +1,16 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'kotlin-android'
 }
-
-apply from: "${rootDir}/config/ktlint/ktlint.gradle"
-apply from: "${rootDir}/config/detekt/detekt.gradle"
 
 android {
     compileSdk projectInfo.compileSdk
 
     defaultConfig {
-        applicationId projectInfo.applicationId
         minSdk projectInfo.minSdk
         targetSdk projectInfo.targetSdk
         versionCode projectInfo.versionCode
         versionName projectInfo.versionName
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -36,14 +31,6 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation libraries.kotlin
-    implementation libraries.appCompat
-    implementation libraries.coreKtx
-    implementation libraries.material
-    implementation libraries.material
-    implementation libraries.constraintlayout
-
-    testImplementation test.junit
-
-    androidTestImplementation androidTest.extJunit
-    androidTestImplementation androidTest.espressoCore
+    implementation libraries.retrofit
+    implementation libraries.gson
 }
