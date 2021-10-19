@@ -20,18 +20,21 @@ buildscript {
                 'junit'           : '4.9',
                 'extJunit'        : '1.1.2',
                 'espressoCore'    : '3.3.0',
-                'retrofit'        : '2.6.0'
+                'retrofit'        : '2.6.0',
+                'hilt'            : '2.38.1'
         ]
         libraries = [
-                'detekt'          : "io.gitlab.arturbosch.detekt:detekt-cli:${versions.detekt}",
-                'kotlin'          : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}",
-                'appCompat'       : "androidx.appcompat:appcompat:${versions.appCompat}",
-                'ktlint'          : "com.pinterest:ktlint:${versions.ktlint}",
-                'coreKtx'         : "androidx.core:core-ktx:${versions.ktx}",
-                'material'        : "com.google.android.material:material:${versions.material}",
-                'constraintlayout': "androidx.constraintlayout:constraintlayout:${versions.constraintlayout}",
-                'retrofit'        : "com.squareup.retrofit2:retrofit:${versions.retrofit}",
-                'gson'            : "com.squareup.retrofit2:converter-gson:${versions.retrofit}"
+                'detekt'             : "io.gitlab.arturbosch.detekt:detekt-cli:${versions.detekt}",
+                'kotlin'             : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}",
+                'appCompat'          : "androidx.appcompat:appcompat:${versions.appCompat}",
+                'ktlint'             : "com.pinterest:ktlint:${versions.ktlint}",
+                'coreKtx'            : "androidx.core:core-ktx:${versions.ktx}",
+                'material'           : "com.google.android.material:material:${versions.material}",
+                'constraintlayout'   : "androidx.constraintlayout:constraintlayout:${versions.constraintlayout}",
+                'retrofit'           : "com.squareup.retrofit2:retrofit:${versions.retrofit}",
+                'gson'               : "com.squareup.retrofit2:converter-gson:${versions.retrofit}",
+                'hilt'               : "com.google.dagger:hilt-android:${versions.hilt}",
+                'hiltAndroidCompiler': "com.google.dagger:hilt-android-compiler:${versions.hilt}"
         ]
         test = [
                 'junit': "junit:junit:${versions.junit}"
@@ -40,18 +43,15 @@ buildscript {
                 'extJunit'    : "androidx.test.ext:junit:${versions.extJunit}",
                 'espressoCore': "androidx.test.espresso:espresso-core:${versions.espressoCore}"
         ]
-        classpath = [
-                'kotlin'      : "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}",
-                'gradlePlugin': "com.android.tools.build:gradle:${versions.gradlePlugin}"
-        ]
     }
     repositories {
         google()
         mavenCentral()
     }
     dependencies {
-        classpath classpath.gradlePlugin
-        classpath classpath.kotlin
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
+        classpath "com.android.tools.build:gradle:${versions.gradlePlugin}"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:${versions.hilt}"
     }
 }
 

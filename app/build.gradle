@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 apply from: "${rootDir}/config/ktlint/ktlint.gradle"
@@ -41,6 +43,9 @@ dependencies {
     implementation libraries.material
     implementation libraries.material
     implementation libraries.constraintlayout
+
+    implementation libraries.hilt
+    kapt libraries.hiltAndroidCompiler
 
     testImplementation test.junit
 
