@@ -1,5 +1,13 @@
 buildscript {
     ext {
+        projectInfo = [
+                'applicationId': "com.lennon.mvisample",
+                'compileSdk'   : 30,
+                'minSdk'       : 21,
+                'targetSdk'    : 30,
+                'versionCode'  : 1,
+                'versionName'  : "1.0"
+        ]
         versions = [
                 'kotlin'          : '1.5.31',
                 'detekt'          : '1.9.0',
@@ -12,7 +20,8 @@ buildscript {
                 'junit'           : '4.9',
                 'extJunit'        : '1.1.2',
                 'espressoCore'    : '3.3.0',
-                'hilt'            : '2.28-alpha'
+                'retrofit'        : '2.6.0',
+                'hilt'            : '2.38.1'
         ]
         libraries = [
                 'detekt'             : "io.gitlab.arturbosch.detekt:detekt-cli:${versions.detekt}",
@@ -22,6 +31,8 @@ buildscript {
                 'coreKtx'            : "androidx.core:core-ktx:${versions.ktx}",
                 'material'           : "com.google.android.material:material:${versions.material}",
                 'constraintlayout'   : "androidx.constraintlayout:constraintlayout:${versions.constraintlayout}",
+                'retrofit'           : "com.squareup.retrofit2:retrofit:${versions.retrofit}",
+                'gson'               : "com.squareup.retrofit2:converter-gson:${versions.retrofit}",
                 'hilt'               : "com.google.dagger:hilt-android:${versions.hilt}",
                 'hiltAndroidCompiler': "com.google.dagger:hilt-android-compiler:${versions.hilt}"
         ]
@@ -32,20 +43,15 @@ buildscript {
                 'extJunit'    : "androidx.test.ext:junit:${versions.extJunit}",
                 'espressoCore': "androidx.test.espresso:espresso-core:${versions.espressoCore}"
         ]
-        classpath = [
-                'kotlin'                 : "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}",
-                'gradlePlugin'           : "com.android.tools.build:gradle:${versions.gradlePlugin}",
-                'hiltAndroidGradlePlugin': "com.google.dagger:hilt-android-gradle-plugin:${versions.hilt}"
-        ]
     }
     repositories {
         google()
         mavenCentral()
     }
     dependencies {
-        classpath classpath.gradlePlugin
-        classpath classpath.kotlin
-        classpath classpath.hiltAndroidGradlePlugin
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
+        classpath "com.android.tools.build:gradle:${versions.gradlePlugin}"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:${versions.hilt}"
     }
 }
 
