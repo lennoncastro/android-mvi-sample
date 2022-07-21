@@ -10,4 +10,8 @@ class HttpClientImpl @Inject constructor() : HttpClient {
         .baseUrl("https://something.here")
         .addConverterFactory(GsonConverterFactory.create())
         .build()
+
+    override fun <T> createService(service: Class<T>): T {
+        return retrofitClient.create(service)
+    }
 }
