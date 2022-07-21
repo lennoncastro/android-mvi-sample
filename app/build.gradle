@@ -49,6 +49,8 @@ dependencies {
 
     testImplementation test.junit
 
+    implementation project(projectModules.network)
+
     androidTestImplementation androidTest.extJunit
     androidTestImplementation androidTest.espressoCore
 }

@@ -2,11 +2,12 @@ package mvisample.network.di.httpClient
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Inject
 
-class HttpClientImpl(override val baseURL: String?) : HttpClient() {
+class HttpClientImpl @Inject constructor() : HttpClient {
 
     private var retrofitClient: Retrofit = Retrofit.Builder()
-        .baseUrl(baseURL ?: System.getenv("URL_BASE"))
+        .baseUrl("https://something.here")
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 }

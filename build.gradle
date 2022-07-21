@@ -43,6 +43,9 @@ buildscript {
                 'extJunit'    : "androidx.test.ext:junit:${versions.extJunit}",
                 'espressoCore': "androidx.test.espresso:espresso-core:${versions.espressoCore}"
         ]
+        projectModules = [
+                'network': ':network',
+        ]
     }
     repositories {
         google()
