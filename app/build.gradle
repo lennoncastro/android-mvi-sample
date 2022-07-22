@@ -41,8 +41,10 @@ dependencies {
     implementation libraries.appCompat
     implementation libraries.coreKtx
     implementation libraries.material
-    implementation libraries.material
     implementation libraries.constraintlayout
+    implementation libraries.lifecycleLivedataKtx
+    implementation libraries.lifecycleViewmodelKtx
+    implementation libraries.fragmentKtx
 
     implementation libraries.hilt
     kapt libraries.hiltAndroidCompiler

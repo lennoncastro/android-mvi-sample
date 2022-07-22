@@ -1,50 +1,56 @@
 buildscript {
     ext {
         projectInfo = [
-                'applicationId': "com.lennon.mvisample",
-                'compileSdk'   : 30,
-                'minSdk'       : 21,
-                'targetSdk'    : 30,
-                'versionCode'  : 1,
-                'versionName'  : "1.0"
+                "applicationId": "com.lennon.mvisample",
+                "compileSdk"   : 31,
+                "minSdk"       : 21,
+                "targetSdk"    : 30,
+                "versionCode"  : 1,
+                "versionName"  : "1.0"
         ]
         versions = [
-                'kotlin'          : '1.5.31',
-                'detekt'          : '1.9.0',
-                'gradlePlugin'    : '7.0.2',
-                'appCompat'       : '1.2.0',
-                'ktlint'          : '0.36.0',
-                'ktx'             : '1.3.2',
-                'material'        : '1.3.0',
-                'constraintlayout': '2.0.4',
-                'junit'           : '4.9',
-                'extJunit'        : '1.1.2',
-                'espressoCore'    : '3.3.0',
-                'retrofit'        : '2.6.0',
-                'hilt'            : '2.38.1'
+                "kotlin"               : "1.5.31",
+                "detekt"               : "1.9.0",
+                "gradlePlugin"         : "7.0.2",
+                "appCompat"            : "1.2.0",
+                "ktlint"               : "0.36.0",
+                "ktx"                  : "1.3.2",
+                "material"             : "1.3.0",
+                "constraintlayout"     : "2.0.4",
+                "junit"                : "4.9",
+                "extJunit"             : "1.1.2",
+                "espressoCore"         : "3.3.0",
+                "retrofit"             : "2.6.0",
+                "hilt"                 : "2.38.1",
+                "lifecycleLivedataKtx" : "2.2.0",
+                "lifecycleViewmodelKtx": "2.2.0",
+                "fragmentKtx"          : "1.5.0",
         ]
         libraries = [
-                'detekt'             : "io.gitlab.arturbosch.detekt:detekt-cli:${versions.detekt}",
-                'kotlin'             : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}",
-                'appCompat'          : "androidx.appcompat:appcompat:${versions.appCompat}",
-                'ktlint'             : "com.pinterest:ktlint:${versions.ktlint}",
-                'coreKtx'            : "androidx.core:core-ktx:${versions.ktx}",
-                'material'           : "com.google.android.material:material:${versions.material}",
-                'constraintlayout'   : "androidx.constraintlayout:constraintlayout:${versions.constraintlayout}",
-                'retrofit'           : "com.squareup.retrofit2:retrofit:${versions.retrofit}",
-                'gson'               : "com.squareup.retrofit2:converter-gson:${versions.retrofit}",
-                'hilt'               : "com.google.dagger:hilt-android:${versions.hilt}",
-                'hiltAndroidCompiler': "com.google.dagger:hilt-android-compiler:${versions.hilt}"
+                "detekt"               : "io.gitlab.arturbosch.detekt:detekt-cli:${versions.detekt}",
+                "kotlin"               : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}",
+                "appCompat"            : "androidx.appcompat:appcompat:${versions.appCompat}",
+                "ktlint"               : "com.pinterest:ktlint:${versions.ktlint}",
+                "coreKtx"              : "androidx.core:core-ktx:${versions.ktx}",
+                "material"             : "com.google.android.material:material:${versions.material}",
+                "constraintlayout"     : "androidx.constraintlayout:constraintlayout:${versions.constraintlayout}",
+                "retrofit"             : "com.squareup.retrofit2:retrofit:${versions.retrofit}",
+                "gson"                 : "com.squareup.retrofit2:converter-gson:${versions.retrofit}",
+                "hilt"                 : "com.google.dagger:hilt-android:${versions.hilt}",
+                "hiltAndroidCompiler"  : "com.google.dagger:hilt-android-compiler:${versions.hilt}",
+                "lifecycleLivedataKtx" : "androidx.lifecycle:lifecycle-livedata-ktx:${versions.lifecycleLivedataKtx}",
+                "lifecycleViewmodelKtx": "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.lifecycleViewmodelKtx}",
+                "fragmentKtx"          : "androidx.fragment:fragment-ktx:${versions.fragmentKtx}",
         ]
         test = [
-                'junit': "junit:junit:${versions.junit}"
+                "junit": "junit:junit:${versions.junit}"
         ]
         androidTest = [
-                'extJunit'    : "androidx.test.ext:junit:${versions.extJunit}",
-                'espressoCore': "androidx.test.espresso:espresso-core:${versions.espressoCore}"
+                "extJunit"    : "androidx.test.ext:junit:${versions.extJunit}",
+                "espressoCore": "androidx.test.espresso:espresso-core:${versions.espressoCore}"
         ]
         projectModules = [
-                'network': ':network',
+                "network": ":network",
         ]
     }
     repositories {
