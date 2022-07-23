@@ -41,4 +41,6 @@ dependencies {
 
     implementation libraries.hilt
     kapt libraries.hiltAndroidCompiler
+
+    implementation project(projectModules.network)
 }
