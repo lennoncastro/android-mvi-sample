@@ -16,9 +16,9 @@ class GitHubRepositoryImpl @Inject constructor(
         page: Long
     ): SearchRepositoriesEntity {
         return dataSource.searchRepositories(
-            language,
-            sort,
-            page
+            language = language,
+            sort = sort,
+            page = page
         ).mapToEntity()
     }
 }

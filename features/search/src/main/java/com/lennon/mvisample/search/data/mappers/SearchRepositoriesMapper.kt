@@ -5,7 +5,9 @@ import com.lennon.mvisample.search.domain.entities.SearchRepositoriesEntity
 
 
 fun SearchRepositoriesDTO.mapToEntity() = SearchRepositoriesEntity(
-    this.totalCount,
-    this.incompleteResults,
-    this.items.map { repositoryDTO -> repositoryDTO.mapToEntity() }
+    totalCount = this.totalCount ?: 0,
+    incompleteResults = this.incompleteResults ?: false,
+    items = this.items
+        ?.filter { repositoryDTO -> repositoryDTO.owner != null }
+        ?.map { repositoryDTO -> repositoryDTO.mapToEntity() } ?: emptyList()
 )

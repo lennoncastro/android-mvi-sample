@@ -5,8 +5,8 @@ import com.lennon.mvisample.search.domain.entities.RepositoryEntity
 
 
 fun RepositoryDTO.mapToEntity() = RepositoryEntity(
-    this.id,
-    this.name,
-    this.fullName,
-    this.owner.mapToEntity(),
+    id = this.id ?: 0,
+    name = this.name ?: "",
+    fullName = this.fullName ?: "",
+    owner = this.owner?.mapToEntity() ?: throw Exception("repository should have a owner"),
 )

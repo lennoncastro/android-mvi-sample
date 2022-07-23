@@ -13,8 +13,8 @@ class GitHubRemoteDataSource @Inject constructor(private val service: GitHubServ
         sort: String,
         page: Long
     ): SearchRepositoriesDTO = service.searchRepositories(
-        language,
-        sort,
-        page
+        language = language,
+        sort = sort,
+        page = page
     )
 }

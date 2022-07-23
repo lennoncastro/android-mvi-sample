@@ -7,7 +7,7 @@ import javax.inject.Inject
 class HttpClientImpl @Inject constructor() : HttpClient {
 
     private var retrofitClient: Retrofit = Retrofit.Builder()
-        .baseUrl("https://something.here")
+        .baseUrl("https://api.github.com/")
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 

@@ -5,8 +5,8 @@ import com.lennon.mvisample.search.domain.entities.OwnerEntity
 
 
 fun OwnerDTO.mapToEntity() = OwnerEntity(
-    this.id,
-    this.login,
-    this.avatarUrl,
-    this.owner,
+    id = this.id ?: 0,
+    login = this.login ?: "",
+    avatarUrl = this.avatarUrl ?: "",
+    owner = this.owner ?: "",
 )
