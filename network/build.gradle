@@ -1,7 +1,12 @@
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
+
+apply from: "${rootDir}/config/ktlint/ktlint.gradle"
+apply from: "${rootDir}/config/detekt/detekt.gradle"
 
 android {
     compileSdk projectInfo.compileSdk
@@ -33,4 +38,7 @@ dependencies {
     implementation libraries.kotlin
     implementation libraries.retrofit
     implementation libraries.gson
+
+    implementation libraries.hilt
+    kapt libraries.hiltAndroidCompiler
 }
