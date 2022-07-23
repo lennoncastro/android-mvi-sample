@@ -50,7 +50,8 @@ buildscript {
                 "espressoCore": "androidx.test.espresso:espresso-core:${versions.espressoCore}"
         ]
         projectModules = [
-                "network": ":network",
+                "network"       : ":network",
+                "featuresSearch": ":features:search",
         ]
     }
     repositories {
@@ -58,7 +59,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10"
         classpath "com.android.tools.build:gradle:${versions.gradlePlugin}"
         classpath "com.google.dagger:hilt-android-gradle-plugin:${versions.hilt}"
     }

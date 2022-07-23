@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
@@ -12,12 +12,10 @@ android {
     compileSdk projectInfo.compileSdk
 
     defaultConfig {
-        applicationId projectInfo.applicationId
         minSdk projectInfo.minSdk
         targetSdk projectInfo.targetSdk
         versionCode projectInfo.versionCode
         versionName projectInfo.versionName
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -38,22 +36,9 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation libraries.kotlin
-    implementation libraries.appCompat
-    implementation libraries.coreKtx
-    implementation libraries.material
-    implementation libraries.constraintlayout
-    implementation libraries.lifecycleLivedataKtx
-    implementation libraries.lifecycleViewmodelKtx
-    implementation libraries.fragmentKtx
+    implementation libraries.retrofit
+    implementation libraries.gson
 
     implementation libraries.hilt
     kapt libraries.hiltAndroidCompiler
-
-    testImplementation test.junit
-
-    implementation project(projectModules.network)
-    implementation project(projectModules.featuresSearch)
-
-    androidTestImplementation androidTest.extJunit
-    androidTestImplementation androidTest.espressoCore
 }

@@ -9,3 +9,4 @@ dependencyResolutionManagement {
 rootProject.name = "mvi-sample"
 include ':app'
 include ':network'
+include ':features:search'
